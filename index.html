@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jose's CS ePortfolio | SNHU CS 499</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --border: #2a2d3a;
+      --accent: #4f8ef7;
+      --accent2: #38d9a9;
+      --text: #e2e8f0;
+      --muted: #8892a4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.7;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -.5px; }
+    header p  { color: var(--muted); margin-top: .4rem; font-size: 1rem; }
+    .badge {
+      display: inline-block;
+      margin-top: .8rem;
+      padding: .25rem .75rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    section { margin-bottom: 3rem; }
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 1.2rem;
+      padding-bottom: .4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .about p { color: var(--muted); max-width: 680px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.5rem;
+      transition: border-color .2s;
+    }
+    .card:hover { border-color: var(--accent); }
+    .card-tag {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .5rem;
+    }
+    .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .5rem; }
+    .card p  { font-size: .88rem; color: var(--muted); margin-bottom: 1rem; }
+    .card a {
+      display: inline-block;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      padding: .3rem .75rem;
+      transition: background .2s, color .2s;
+    }
+    .card a:hover { background: var(--accent); color: #fff; }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+    }
+    .skill-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: .3rem .8rem;
+      font-size: .82rem;
+      color: var(--muted);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: .82rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Jose's Computer Science ePortfolio</h1>
+  <p>Southern New Hampshire University &nbsp;·&nbsp; CS 499 Capstone</p>
+  <span class="badge">Class of 2026</span>
+</header>
+
+<main>
+
+  <!-- About -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I am a Computer Science student at SNHU with a focus on cloud architecture,
+      back-end systems, and embedded IoT development. Over three years in the program
+      I have worked across the full stack — from low-level C firmware on microcontrollers
+      to serverless APIs on AWS. This portfolio showcases three capstone enhancements
+      that demonstrate software design, algorithmic reasoning, and database engineering.
+    </p>
+  </section>
+
+  <!-- Artifacts -->
+  <section>
+    <h2>Enhancement Artifacts</h2>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-tag">Category 1 · Software Design &amp; Engineering</div>
+        <h3>Raspberry Pi Thermostat — Python OOP Port</h3>
+        <p>
+          Refactored a procedural Python thermostat from CS 350 into a modular
+          object-oriented architecture with Sensor, Heater, Scheduler, and
+          ThermostatController classes, plus pytest unit tests and a
+          JSON-driven weekly schedule.
+        </p>
+        <a href="thermostat-oop/controller.py">View Code</a>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Category 2 · Algorithms &amp; Data Structures</div>
+        <h3>Min-Heap Priority Queue Event Scheduler</h3>
+        <p>
+          Replaced a polling loop (O(n) per tick) with a min-heap event queue
+          (O(log n) per tick) for scheduling thermostat set-point changes,
+          including Big-O analysis and automated unit tests.
+        </p>
+        <a href="thermostat-scheduler/event_scheduler.py">View Code</a>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Category 3 · Databases</div>
+        <h3>CS 470 Cloud App — DynamoDB Enhancements</h3>
+        <p>
+          Enhanced the CS 470 serverless Q&amp;A application with DynamoDB
+          Global Secondary Indexes, JSON Schema validation in Lambda handlers,
+          and an EventBridge-triggered analytics pipeline writing to a
+          Reports table.
+        </p>
+        <a href="cs470-database/">View Code</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <span class="skill-chip">Python</span>
+      <span class="skill-chip">C / Embedded C</span>
+      <span class="skill-chip">AWS Lambda</span>
+      <span class="skill-chip">DynamoDB</span>
+      <span class="skill-chip">API Gateway</span>
+      <span class="skill-chip">Raspberry Pi / GPIO</span>
+      <span class="skill-chip">pytest</span>
+      <span class="skill-chip">Git / GitHub</span>
+      <span class="skill-chip">State Machines</span>
+      <span class="skill-chip">UART / I2C / SPI</span>
+      <span class="skill-chip">Agile / Scrum</span>
+      <span class="skill-chip">JSON Schema</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Jose &nbsp;·&nbsp; CS 499 ePortfolio &nbsp;·&nbsp;
+  <a href="https://github.com/josebalix22" style="color:inherit">github.com/josebalix22</a>
+</footer>
+
+</body>
+</html>
